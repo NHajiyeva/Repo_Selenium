@@ -7,14 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class homeWork2 {
 
+public class homeWork3 {
     @Test
-    public void practical() {
+    public void tempComparison() {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nazrin\\Documents\\git\\Repo_Selenium\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.facebook.com");
+        driver.get("https://www.darksky.net");
 
         try {
             Thread.sleep(5000);
@@ -22,29 +22,27 @@ public class homeWork2 {
             e.printStackTrace();
         }
 
-        String emailId = "email";
-        By emailLocator = By.id(emailId);
-        WebElement emailBox = driver.findElement(emailLocator);
-        emailBox.sendKeys("myemail@gmail.com");
 
-        // driver.findElement(By.id("email")).sendKeys("abcd@test.com");
-
-        String passName = "pass";
-        By passLocator = By.name(passName);
-        WebElement passBox = driver.findElement(passLocator);
-        passBox.sendKeys("passw0rd");
-
-        String logIn = "Log In";
-        By logInLocator = By.linkText(logIn);
-        WebElement logInButton = driver.findElement(logInLocator);
-        logInButton.click();
-
-        driver.close();
     }
 
+    @Test
+    public void tempVerification() {
+
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nazrin\\Documents\\git\\Repo_Selenium\\drivers\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.darksky.net");
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
     @Test
-    public void createNewAccount() {
+    public void genderDisplayed() {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nazrin\\Documents\\git\\Repo_Selenium\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -55,6 +53,7 @@ public class homeWork2 {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         String createAccountText = "Create New Account";
         By accountTextLocator = By.linkText(createAccountText);
         WebElement createAccountButton = driver.findElement(accountTextLocator);
@@ -99,10 +98,20 @@ public class homeWork2 {
         WebElement signUpButton = driver.findElement(singUpLocator);
         signUpButton.click();
 
+
+        String gender = "js_8";
+        By genderLocator = By.id(gender);
+        WebElement genderPopUp = driver.findElement(genderLocator);
+        boolean ifGenderPopUpDisplayed = genderPopUp.isDisplayed();
+
+        try {
+            Thread.sleep(5000);
+        } catch (NoSuchElementException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(ifGenderPopUpDisplayed);
+
         driver.close();
-
-
     }
 }
-
-

@@ -2,7 +2,7 @@ package classes;
 
 import org.openqa.selenium.By;
 
-public class class2Locators {
+public class class2_Locators {
 
         /**
          *

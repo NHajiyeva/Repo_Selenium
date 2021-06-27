@@ -1,6 +1,6 @@
 package classes;
 
-public class class2WebElements_Dom {
+public class class2_WebElements_Dom {
 
         /**
          * Types of WebElements:
